@@ -21,7 +21,10 @@ class FavoriteSerializer(serializers.ModelSerializer):
         title = data.get('title', '')
         author = data.get('author', None)
 
-        if title and author and title.lower().strip() == author.name.lower():
+        author_name = author.username if hasattr(
+            author, 'username') else str(author)
+
+        if title and author and title.lower().strip() == author_name.lower():
             raise serializers.ValidationError(
                 'Title and Author should not be same')
         return data
