@@ -26,4 +26,4 @@ jobs:
         run: python manage.py check
 
       - name: Run Django tests
-        run: ytest favorites/tests/tests_favorites.py
+        run: pytest favorites/tests/tests_favorites.py
