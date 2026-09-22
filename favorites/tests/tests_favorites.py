@@ -21,10 +21,10 @@ def test_successfull_favorite_creation(api_client, user):
     payload = {
         # "id": 1,
         "title": "django-run",
-        "author": user,
+        "author": user.id,
         "rating": 5
     }
 
-    response = api_client.post("/v1/books/", data=payload)
+    response = api_client.post("/v1/books/", payload, format="json")
 
     assert response.status_code == 201
