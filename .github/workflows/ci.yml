@@ -29,17 +29,17 @@ jobs:
           python-version: "3.12"
 
           cache: "pip"
-          cache-dependency-path: "core/requirements.txt"
+          cache-dependency-path: "requirements.txt"
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install -r core/requirements.txt
+          python -m pip install -r requirements.txt
 
       - name: Run Django checks
-        run: python core/manage.py check
+        run: python manage.py check
 
       - name: Run Django tests
         run: |
-          export PYTHONPATH=$PYTHONPATH:./core
-          pytest ./core -v
+          export PYTHONPATH=$PYTHONPATH:.
+          pytest -v
