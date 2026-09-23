@@ -37,9 +37,7 @@ jobs:
           python -m pip install -r requirements.txt
 
       - name: Run Django checks
-        working-directory: ./core
         run: python manage.py check
 
       - name: Run Django tests
-        working-directory: ./core
-        run: pytest favorites/tests/test_favorites.py -v
+        run: pytest
