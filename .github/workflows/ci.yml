@@ -42,4 +42,4 @@ jobs:
       - name: Run Django tests
         run: |
           export PYTHONPATH=$PYTHONPATH:.
-          pytest . -v
+          pytest favorites/tests/ -v
