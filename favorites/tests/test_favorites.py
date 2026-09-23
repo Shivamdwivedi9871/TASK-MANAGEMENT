@@ -28,3 +28,4 @@ def test_successfull_favorite_creation(api_client, user):
     response = api_client.post("/v1/books/", payload, format="json")
 
     assert response.status_code == 201
+    print("Passed")
